@@ -6,144 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
-    <style>
-        * {
-            padding: 1px;
-        }
-
-        #backToTopBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 99;
-            border: none;
-            outline: none;
-            background-color: green;
-            color: white;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-
-            /* Agregar transición para la propiedad opacity */
-            transition: opacity .5s ease-in-out;
-        }
-
-        #backToTopBtn:hover {
-            background-color: darkgreen;
-        }
-
-        #backToTopBtn:before {
-            content: "\2191";
-            font-size: 40px;
-            font-weight: bolder;
-        }
-
-
-        /* Agregar clase para ocultar el botón */
-        .hide {
-            opacity: 0;
-        }
-
-        h1 {
-            text-align: center
-        }
-
-        /* Estilos para el botón de alternar el tema oscuro */
-        #darkModeToggle {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            z-index: 99;
-            border: none;
-            outline: none;
-            background-color: #555;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            font-size: 18px;
-            border-radius: 40%;
-            position: fixed;
-        }
-
-        #darkModeToggle:hover {
-            background-color: #333;
-        }
-
-        /* Estilos para el tema oscuro */
-        body.dark-mode {
-            background-color: #222;
-            color: white;
-        }
-
-        body.dark-mode header {
-            background-color: #333;
-        }
-
-        /* Estilos para el contenido de la página*/
-        #text1 {
-            text-align: center;
-            font-family: Comic Sans MS, cursive, sans-serif;
-
-        }
-
-        .cuadro {
-            border: 1px solid black;
-            padding: 10px;
-        }
-
-        .cuadro h1 {
-            margin: 0;
-        }
-
-        body {
-            background-color: white;
-            color: black;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .dark-mode {
-            background-color: black;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="body-div">
 
         <button id="backToTopBtn" onclick="backToTop()"> </button>
-        <script>
-            function backToTop() {
-                document.body.scrollTop = 0; // Para Safari
-                document.documentElement.scrollTop = 0; // Para Chrome, Firefox, IE y Opera
-            }
-            window.onscroll = function () { scrollFunction() };
-
-            function scrollFunction() {
-                var backToTopBtn = document.getElementById("backToTopBtn");
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 100) {
-                    backToTopBtn.style.display = "block";
-                } else {
-                    backToTopBtn.style.display = "none";
-                }
-            }
-            window.onscroll = function () { scrollFunction() };
-
-            function scrollFunction() {
-                var backToTopBtn = document.getElementById("backToTopBtn");
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    backToTopBtn.classList.remove("hide");
-                } else {
-                    backToTopBtn.classList.add("hide");
-                }
-            }
-
-            function backToTop() {
-                // Agregar animación de desplazamiento suave hacia arriba
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        </script>
+        <script src="BackToTop.js"></script>
         <!-- Agregar la fuente de Font Awesome a tu página -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <!-- Agregar botón para alternar el tema oscuro en el encabezado -->
@@ -152,28 +22,7 @@
 
             <!-- Resto del contenido del encabezado -->
         </header>
-        <script>
-
-            // Obtener el botón y el icono
-            const boton = document.querySelector('#darkModeToggle');
-            const icono = boton.querySelector('i');
-            // Agregar un evento de clic al botón
-            boton.addEventListener('click', () => {
-                // Alternar entre las clases fa-sun y fa-moon del icono
-                icono.classList.toggle('fa-sun');
-                icono.classList.toggle('fa-moon');
-            });
-
-            // Obtener el botón de alternar el tema oscuro
-            var darkModeToggle = document.getElementById("darkModeToggle");
-
-            // Agregar evento de clic al botón de alternar el tema oscuro
-            darkModeToggle.addEventListener("click", function () {
-                // Alternar la clase .dark-mode en el elemento body
-                document.body.classList.toggle("dark-mode");
-            });
-        </script>
-
+        <script src="DarkMode.js"></script>
         <div>
             <h1 id="title" ; class="cuadro">
                 Todo acerca sobre el ciclón Yaku En el Perú
