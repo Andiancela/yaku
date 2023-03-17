@@ -1,0 +1,105 @@
+* {
+    padding: 1px;
+}
+
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+
+    /* Agregar transición para la propiedad opacity */
+    transition: opacity .5s ease-in-out;
+}
+#backToTopBtn:hover {
+    background-color: darkgreen;
+}
+
+/*Alternar color con el modo oscuro*/
+.ModeDark{
+    background-color: greenyellow;
+}
+
+
+
+#backToTopBtn:before {
+    content: "\2191";
+    font-size: 30px;
+    font-weight: bolder;
+    color: black;
+}
+
+
+/* Agregar clase para ocultar el botón */
+.hide {
+    opacity: 0;
+}
+
+h1 {
+    text-align: center
+}
+
+/* Estilos para el botón de alternar el tema oscuro */
+#darkModeToggle {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 40%;
+    position: fixed;
+}
+
+#darkModeToggle:hover {
+    background-color: #333;
+}
+
+/* Estilos para el tema oscuro */
+body.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+body.dark-mode header {
+    background-color: #333;
+}
+
+/* Estilos para el contenido de la página*/
+#text1 {
+    text-align: justify;
+    font-family: Comic Sans MS, cursive, sans-serif;
+    display: block;
+
+}
+
+body {
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+#title {
+    font-family: 'Gill Sans MT';
+    text-align: center;
+}
