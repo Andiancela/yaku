@@ -1,3 +1,6 @@
+//Cambiar el color del BackToTop button
+const Up = document.querySelector("#backToTopBtn")
+
 // Obtener el botón y el icono
 const boton = document.querySelector('#darkModeToggle');
 const icono = boton.querySelector('i');
@@ -6,6 +9,8 @@ boton.addEventListener('click', () => {
     // Alternar entre las clases fa-sun y fa-moon del icono
     icono.classList.toggle('fa-sun');
     icono.classList.toggle('fa-moon');
+    Up.classList.toggle("ModeDark")
+    Up.classList.toggle("ModeDarkNo")
 });
 
 // Obtener el botón de alternar el tema oscuro
@@ -44,4 +49,24 @@ document.getElementById('dark-mode-toggle').addEventListener('click', () => {
     } else {
         disableDarkMode();
     }
+});
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // El tema oscuro está activado en el navegador del usuario
+    // Aplicar el modo oscuro en tu sitio web
+    document.body.classList.add('darkmode');
+}
+
+const toggleButton = document.querySelector('.toggle-button');
+const body = document.querySelector('body');
+
+// Comprobar si hay una preferencia guardada en localStorage
+if (localStorage.getItem('darkMode') === 'true') {
+  body.classList.add('dark-mode');
+}
+
+toggleButton.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+
+  // Guardar la preferencia del usuario en localStorage
+  localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
 });

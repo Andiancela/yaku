@@ -17,7 +17,7 @@ window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
     var backToTopBtn = document.getElementById("backToTopBtn");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 20) {
         backToTopBtn.classList.remove("hide");
     } else {
         backToTopBtn.classList.add("hide");
